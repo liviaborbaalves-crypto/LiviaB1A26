@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juntos Contra o Cyberbullying</title>
+  <style>
+    :root {
+      --tam-fonte: 16px;
+      --cor-fundo: #edf2f7;
+      --cor-principal: #2b6cb0;
+      --cor-texto: #1a202c;
+      --cor-cartao: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: var(--tam-fonte);
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Barra Superior de Acessibilidade */
+    .atritos-acessibilidade {
+      background-color: #1a202c;
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .atritos-acessibilidade button {
+      background-color: var(--cor-principal);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      margin-left: 5px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .atritos-acessibilidade button:hover {
+      background-color: #2c5282;
+    }
+
+    header {
+      background-color: var(--cor-principal);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--cor-cartao);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      border-left: 6px solid var(--cor-principal);
+    }
+
+    h2 {
+      color: var(--cor-principal);
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .alerta-ajuda {
+      background-color: #fff5f5;
+      border-left-color: #e53e3e;
+    }
+
+    .alerta-ajuda h2 {
+      color: #c53030;
+    }
+
+    footer {
+      background-color: #1a202c;
+      color: #a0aec0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra Acessível -->
+  <div class="atritos-acessibilidade" role="region" aria-label="Opções de Acessibilidade">
+    <span>Acessibilidade do Site</span>
+    <div>
+      <button onclick="mudarTamanhoFonte(2)" aria-label="Aumentar o tamanho do texto">A +</button>
+      <button onclick="mudarTamanhoFonte(-2)" aria-label="Diminuir o tamanho do texto">A -</button>
+      <button onclick="resetarFonte()" aria-label="Restaurar tamanho original do texto">Tamanho Normal</button>
+    </div>
+  </div>
+
+  <!-- Cabeçalho Semântico -->
+  <header role="banner">
+    <h1>Internet Segura: Diga Não ao Cyberbullying</h1>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container" role="main">
+
+    <article class="card" aria-labelledby="secao-conceito">
+      <h2 id="secao-conceito">Conceito Oficial</h2>
+      <p>
+        O <strong>cyberbullying</strong> consiste no uso de tecnologias de informação e comunicação para intimidar, assediar, humilhar ou perseguir indivíduos de forma intencional e repetida. 
+      </p>
+      <p>
+        Diferente do bullying tradicional, a agressão virtual pode ocorrer 24 horas por dia e alcançar uma grande audiência em poucos segundos.
+      </p>
+    </article>
+
+    <article class="card" aria-labelledby="secao-causas">
+      <h2 id="secao-causas">Fatores e Causas</h2>
+      <p>Dentre os principais motivadores do comportamento de agressão virtual estão:</p>
+      <ul>
+        <li><strong>Falso Anonimato:</strong> A falsa percepção de que perfis virtuais protegem a identidade do agressor.</li>
+        <li><strong>Ausência de Reação Imediata:</strong> Sem ver a dor da vítima presencialmente, o agressor sente menos empatia.</li>
+        <li><strong>Pressão Social e Difusão de Memes:</strong> A reprodução de ofensas para se sentir parte de um grupo online.</li>
+      </ul>
+    </article>
+
+    <article class="card alerta-ajuda" aria-labelledby="secao-ajuda">
+      <h2 id="secao-ajuda">Precisa de Apoio ou Quer Denunciar?</h2>
+      <p>Não guarde o problema para você. Existem canais oficiais gratuitos e seguros:</p>
+      <ul>
+        <li><strong>Disque 100:</strong> MFDH - Ouvidoria Nacional de Direitos Humanos.</li>
+        <li><strong>SaferNet Brasil:</strong> Atendimento psicológico e denúncia de crimes na web via chat.</li>
+        <li><strong>CVV (Ligue 188):</strong> Apoio emocional 24 horas por dia.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <!-- Rodapé Semântico com o Nome -->
+  <footer role="contentinfo">
+    <p>Projeto de Conscientização Digital | Criado por: <strong>Livia Borba</strong></p>
+  </footer>
+
+  <!-- Script de Ajuste de Fonte -->
+  <script>
+    let tamanhoPadrao = 16;
+    
+    function mudarTamanhoFonte(fator) {
+      tamanhoPadrao += fator;
+      if (tamanhoPadrao < 12) tamanhoPadrao = 12;
+      if (tamanhoPadrao > 24) tamanhoPadrao = 24;
+      document.documentElement.style.setProperty('--tam-fonte', tamanhoPadrao + 'px');
+    }
+
+    function resetarFonte() {
+      tamanhoPadrao = 16;
+      document.documentElement.style.setProperty('--tam-fonte', '16px');
+    }
+  </script>
+
+</body>
+</html>
